@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <!--- TODO [IMP] -->
+        <record model="ir.ui.view" id="vehicle_form_view">
+            <field name="name">vehicle.form</field>
+            <field name="model">vehicle</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group name="characteristics" col="3">
+                                <group name="sensors">
+                                    <field name="humidity_rate"/>
+                                    <field name="density"/>
+                                    <field name="temperature"/>
+                                </group>
+                            <group name="rates">
+                                <field name="damage_rate"/>
+                                <field name="break_rate"/>
+                                <field name="impurity_rate"/>
+                            </group>
+                            <group name="transgenic">
+                                <field name="transgenic"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="ticket"/>
+                        </group>
+                        <group>
+                            <group col="1" name="weights">
+                                <group>
+                                    <field name="weight_neto"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="humid_kilos"/>
+                                <field name="damaged_kilos"/>
+                                <field name="broken_kilos"/>
+                                <field name="impure_kilos"/>
+                                <field name="clean_kilos"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="stock_picking_id" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
     </data>
 </openerp>
