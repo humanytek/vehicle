@@ -33,7 +33,7 @@
                         <group>
                             <group col="1" name="weights">
                                 <group>
-                                    <field name="weight_neto"/>
+                                    <field name="raw_kilos"/>
                                 </group>
                             </group>
                             <group>
@@ -45,7 +45,7 @@
                             </group>
                         </group>
                         <group>
-                            <field name="stock_picking_id" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                            <field name="stock_picking" attrs="{'invisible': [('state', '!=', 'done')]}"/>
                         </group>
                     </sheet>
                 </form>
