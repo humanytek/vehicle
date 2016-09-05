@@ -6,6 +6,9 @@ class Vehicle(models.Model):
 
     name = fields.Char()
 
+    product_id = fields.Many2one('product.product', compute="_compute_product_id", store=False, readonly=True)
+    location_id = fields.Many2one('stock.location', compute="_compute_location_id", store=False, readonly=True)
+
     humidity_rate = fields.Float()
     damage_rate = fields.Float()
     break_rate = fields.Float()
@@ -31,10 +34,9 @@ class Vehicle(models.Model):
     stock_picking = fields.Many2one('stock.picking', readonly=True)
 
     state = fields.Selection(
-    {
-        'ready_transfer': 'Ready to transfer',
-        'done': 'Done',
-    })
+    [
+        ('done', 'Done'),
+    ])
 
     @api.one
     def _compute_raw_kilos(self):
@@ -76,3 +78,11 @@ class Vehicle(models.Model):
     @api.one
     def _compute_clean_kilos(self):
         self.clean_kilos = self.raw_kilos - self.deducted_kilos
+
+    @api.one
+    def _compute_product_id(self):
+        self.product_id = False
+
+    @api.one
+    def _compute_location_id(self):
+        self.location_id = False
