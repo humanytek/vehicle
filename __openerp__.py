@@ -6,6 +6,5 @@
     'depends': ['stock'],
     'data': [
         'security/ir.model.access.csv',
-        'views/vehicle.xml',
     ]
 }

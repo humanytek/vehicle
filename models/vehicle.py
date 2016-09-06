@@ -1,7 +1,7 @@
 from openerp import api, fields, models
 
 
-class Vehicle(models.Model):
+class Vehicle(models.AbstractModel):
     _name = 'vehicle'
 
     name = fields.Char()
@@ -31,7 +31,7 @@ class Vehicle(models.Model):
 
     ticket = fields.Integer()
 
-    stock_picking = fields.Many2one('stock.picking', readonly=True)
+    stock_picking_id = fields.Many2one('stock.picking', readonly=True)
 
     state = fields.Selection(
     [
