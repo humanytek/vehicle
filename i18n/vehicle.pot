@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* vehicle
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-23 16:43+0000\n"
+"PO-Revision-Date: 2016-09-23 16:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vehicle
+#: field:vehicle,break_rate:0
+msgid "Break rate"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,broken_kilos:0
+msgid "Broken kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,clean_kilos:0
+msgid "Clean kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,damage_rate:0
+msgid "Damage rate"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,damaged_kilos:0
+msgid "Damaged kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,deducted_kilos:0
+msgid "Deducted kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,density:0
+msgid "Density"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: vehicle
+#: selection:vehicle,state:0
+msgid "Done"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,humid_kilos:0
+msgid "Humid kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,humidity_rate:0
+msgid "Humidity rate"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,id:0
+msgid "ID"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,impure_kilos:0
+msgid "Impure kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,impurity_rate:0
+msgid "Impurity rate"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,location_id:0
+msgid "Location id"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,name:0
+msgid "Name"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,product_id:0
+msgid "Product id"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,raw_kilos:0
+msgid "Raw kilos"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,state:0
+msgid "State"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,stock_picking_id:0
+msgid "Stock picking id"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,temperature:0
+msgid "Temperature"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,ticket:0
+msgid "Ticket"
+msgstr ""
+
+#. module: vehicle
+#: field:vehicle,transgenic:0
+msgid "Transgenic"
+msgstr ""
+
