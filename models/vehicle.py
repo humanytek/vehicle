@@ -7,7 +7,7 @@ class Vehicle(models.AbstractModel):
     name = fields.Char()
 
     product_id = fields.Many2one('product.product', compute="_compute_product_id", store=False, readonly=True)
-    location_id = fields.Many2one('stock.location', compute="_compute_location_id", store=False, readonly=True)
+    location_id = fields.Many2one('stock.location')
 
     humidity_rate = fields.Float()
     damage_rate = fields.Float()
@@ -82,7 +82,3 @@ class Vehicle(models.AbstractModel):
     @api.one
     def _compute_product_id(self):
         self.product_id = False
-
-    @api.one
-    def _compute_location_id(self):
-        self.location_id = False
