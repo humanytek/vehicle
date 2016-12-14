@@ -18,16 +18,16 @@ class Vehicle(models.AbstractModel):
     temperature = fields.Float()
     transgenic = fields.Float()
 
-    raw_kilos = fields.Float(compute="_compute_raw_kilos", store=False)
+    raw_kilos = fields.Integer(compute="_compute_raw_kilos", store=False)
 
-    humid_kilos = fields.Float(compute="_compute_humid_kilos", store=False)
-    damaged_kilos = fields.Float(compute="_compute_damaged_kilos", store=False)
-    broken_kilos = fields.Float(compute="_compute_broken_kilos", store=False)
-    impure_kilos = fields.Float(compute="_compute_impure_kilos", store=False)
+    humid_kilos = fields.Integer(compute="_compute_humid_kilos", store=False)
+    damaged_kilos = fields.Integer(compute="_compute_damaged_kilos", store=False)
+    broken_kilos = fields.Integer(compute="_compute_broken_kilos", store=False)
+    impure_kilos = fields.Integer(compute="_compute_impure_kilos", store=False)
 
-    deducted_kilos = fields.Float(compute="_compute_deducted_kilos", store=False)
+    deducted_kilos = fields.Integer(compute="_compute_deducted_kilos", store=False)
 
-    clean_kilos = fields.Float(compute="_compute_clean_kilos", store=False)
+    clean_kilos = fields.Integer(compute="_compute_clean_kilos", store=False)
 
     ticket = fields.Integer()
 
@@ -46,28 +46,28 @@ class Vehicle(models.AbstractModel):
     @api.depends('raw_kilos', 'humidity_rate')
     def _compute_humid_kilos(self):
         if self.humidity_rate > 14:
-            self.humid_kilos = self.raw_kilos * (self.humidity_rate - 14) * .0116
+            self.humid_kilos = round(self.raw_kilos * (self.humidity_rate - 14) * .0116)
         else:
             self.humid_kilos = 0
 
     @api.one
     def _compute_damaged_kilos(self):
         if self.damage_rate > 5:
-            self.damaged_kilos = self.raw_kilos * (self.damage_rate - 5) / 100
+            self.damaged_kilos = round(self.raw_kilos * (self.damage_rate - 5) / 100)
         else:
             self.damaged_kilos = 0
 
     @api.one
     def _compute_broken_kilos(self):
         if self.break_rate > 2:
-            self.broken_kilos = self.raw_kilos * (self.break_rate - 2) / 100
+            self.broken_kilos = round(self.raw_kilos * (self.break_rate - 2) / 100)
         else:
             self.broken_kilos = 0
 
     @api.one
     def _compute_impure_kilos(self):
         if self.impurity_rate > 2:
-            self.impure_kilos = self.raw_kilos * (self.impurity_rate - 2) / 100
+            self.impure_kilos = round(self.raw_kilos * (self.impurity_rate - 2) / 100)
         else:
             self.impure_kilos = 0
 
